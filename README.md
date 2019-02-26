@@ -1,3 +1,6 @@
+An autocomplete sample project inspired by https://blog.bitsrc.io/building-a-react-autocomplete-component-from-scratch-3f4d5618aa14
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
