@@ -10,9 +10,11 @@ const AutocompleteOptionList = ({ activeOption, filteredOptions, onOptionClick }
     }
     else {
         options = filteredOptions.map((optionName, index) => (
-            <AutocompleteOption isActive={index === activeOption}
-                                optionName={optionName}
-                                onClick={onOptionClick} />
+            <AutocompleteOption
+                key={"option-" + optionName}
+                isActive={index === activeOption}
+                optionName={optionName}
+                onClick={onOptionClick}/>
         ));
     }
 
@@ -22,7 +24,7 @@ const AutocompleteOptionList = ({ activeOption, filteredOptions, onOptionClick }
 };
 
 AutocompleteOptionList.propTypes = {
-    activeOption: PropTypes.bool.isRequired,
+    activeOption: PropTypes.number.isRequired,
     filteredOptions: PropTypes.array.isRequired,
     onOptionClick: PropTypes.func.isRequired,
 };
