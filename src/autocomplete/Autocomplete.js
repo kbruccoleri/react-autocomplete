@@ -30,16 +30,16 @@ class Autocomplete extends React.Component {
         })
     }
 
-    selectOptionClick(e) {
+    selectOptionClick = (e) => {
         this.setState({
             activeOption: 0,
             filteredOption: [],
             showOptions: false,
             userInput: e.currentTarget.innerText,
         })
-    }
+    };
 
-    selectOptionEnter(e) {
+    selectOptionEnter() {
         this.setState({
             activeOption: 0,
             showOptions: false,
