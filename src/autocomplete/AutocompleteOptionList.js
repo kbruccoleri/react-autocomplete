@@ -3,22 +3,21 @@ import PropTypes from 'prop-types';
 import AutocompleteOption from "./AutocompleteOption";
 
 const AutocompleteOptionList = ({ activeOption, filteredOptions, onOptionClick }) => {
+
+    let options;
     if (!filteredOptions.length) {
-        return (
-            <div className="no-options">
-                <em>No Option!</em>
-            </div>
-        );
+        options = (<li>No Results</li>);
+    }
+    else {
+        options = filteredOptions.map((optionName, index) => (
+            <AutocompleteOption isActive={index === activeOption}
+                                optionName={optionName}
+                                onClick={onOptionClick} />
+        ));
     }
 
     return (
-        <ul className="options">{
-            filteredOptions.map((optionName, index) => (
-                <AutocompleteOption isActive={index === activeOption}
-                                    optionName={optionName}
-                                    onClick={onOptionClick} />
-            ))
-        }</ul>
+        <ul className="options">{options}</ul>
     );
 };
 
